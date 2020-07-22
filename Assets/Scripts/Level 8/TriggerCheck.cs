@@ -10,6 +10,7 @@ public class TriggerCheck : MonoBehaviour
 
     private ServerStatus servstat;
 
+    
     private void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();

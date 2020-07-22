@@ -9,10 +9,10 @@ public class Projectile : MonoBehaviour
 
     private Transform player;
     private Vector2 target;
+    private bool isDestoyed = false;
 
     public float interval = 1.5f;
 
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -25,6 +25,7 @@ public class Projectile : MonoBehaviour
 
     void DestroyProjectile()
     {
+        isDestoyed = true;
         Destroy(gameObject);
     }
 
@@ -37,7 +38,8 @@ public class Projectile : MonoBehaviour
     }
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        if (!isDestoyed && PlatPlayer.isAlive)
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
 
         if (transform.position.x == player.position.x && transform.position.y == player.position.y)
             DestroyProjectile();

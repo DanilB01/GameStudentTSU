@@ -20,6 +20,9 @@ public class ServerStatus : MonoBehaviour
     int curDetail = 0;
     bool ifAllBreaking = false;
 
+    //public AudioSource DeathSound;
+    //public AudioSource FixSound;
+
     void Start()
     {
         for (int i = 0; i < 12; i++)
@@ -118,12 +121,15 @@ public class ServerStatus : MonoBehaviour
         {
             if (ifBreaking[i] && timerToFix[i] <= 0)
             {
+                //DeathSound.Play();
                 ifBroken[i] = true;
                 animCloud[i].SetInteger("WhichDetail", -1);
                 whichDetailNeed[i] = -1;
+                //death
             }
             if (chekingTriggers[i].IsNecessaryDetailExist && timerToFix[i] < 20 && timerToFix[i] > 0)
             {
+                //FixSound.Play();
                 chekingTriggers[i].IsNecessaryDetailExist = false;
                 animator[i].SetBool("IfBreakParam", false);
                 animCloud[i].SetInteger("WhichDetail", -1);

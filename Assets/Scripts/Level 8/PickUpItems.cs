@@ -12,6 +12,8 @@ public class PickUpItems : MonoBehaviour
 
     private bool iftrig = false;
 
+    public AudioSource TakeSound;
+
     private void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -19,7 +21,7 @@ public class PickUpItems : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (iftrig)
             {
@@ -27,6 +29,7 @@ public class PickUpItems : MonoBehaviour
                 {
                     if (inventory.isFull[i] == false)
                     {
+                        TakeSound.Play();
                         inventory.isFull[i] = true;
                         Instantiate(slotButton, inventory.slots[i].transform);
                         inventory.itemID[i] = itemId;

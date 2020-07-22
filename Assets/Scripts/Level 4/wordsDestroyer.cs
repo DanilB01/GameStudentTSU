@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class wordsDestroyer : MonoBehaviour
 {
+    public bool isCorrectWord;
     WordsCounter wc;
     private void Start()
     {
@@ -13,11 +14,14 @@ public class wordsDestroyer : MonoBehaviour
     {
         if (collision.CompareTag("Player") || collision.CompareTag("DeleteBorder"))
         {
-            Destroy(gameObject);
             if (collision.CompareTag("Player"))
             {
-                wc.counter++;
+                if(isCorrectWord)
+                    wc.counter++;
+                else
+                    wc.counter--;
             }
+            Destroy(gameObject);
         }
     }
 }

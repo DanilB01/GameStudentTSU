@@ -4,29 +4,40 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - Plus
-  - attack_ball
   - Charge
+  - attack_ball
+  - Fire
+  - kitty_in_box
   - platform
   - Coins
-  - Servers
-  - Server0
-  - Server1
-  - Server2
-  - Server3
-  - Server4
-  - Server5
-  - Server6
-  - Server7
-  - Server8
-  - Server9
-  - Server10
-  - Server11
+  - Enemy
   - Word
+  - room
+  - killbox
+  - Activator
+  - WordGenerator
   - DeleteBorder
   - wordsCounterUI
-  - WordGenerator
+  - Server7
+  - Server5
+  - Server6
+  - Server0
+  - Server2
+  - Servers
+  - Server9
+  - Server11
+  - Server3
+  - Server1
+  - Server8
+  - Server10
+  - Server4
+  - timerFor7lvl
+  - Car
+  - Transfer2ndCampus
+  - Student
+  - Arrow
+  - finalPanel
   layers:
   - Default
   - TransparentFX
@@ -36,14 +47,14 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Climbing
+  - Player
+  - Background
+  - Enemy
+  - Hazards
+  - Interactables
+  - Cars
   - 
   - 
   - 
@@ -61,6 +72,45 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Behind
+    uniqueID: 2024434113
+    locked: 0
+  - name: Start
+    uniqueID: 795115507
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Car
+    uniqueID: 1230652107
+    locked: 0
+  - name: Door
+    uniqueID: 332727909
+    locked: 0
+  - name: Wall
+    uniqueID: 3878962547
+    locked: 0
+  - name: Background
+    uniqueID: 3172085399
+    locked: 0
+  - name: Climbing
+    uniqueID: 2998889399
+    locked: 0
+  - name: Enemy
+    uniqueID: 843019921
+    locked: 0
+  - name: Hazards
+    uniqueID: 4173927475
+    locked: 0
+  - name: Player
+    uniqueID: 1031939831
+    locked: 0
+  - name: Foreground
+    uniqueID: 592738035
+    locked: 0
+  - name: Interactables
+    uniqueID: 2516113459
+    locked: 0
+  - name: Arrows
+    uniqueID: 470370975
     locked: 0

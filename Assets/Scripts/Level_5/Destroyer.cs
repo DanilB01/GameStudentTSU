@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Destroyer : MonoBehaviour
 {
@@ -9,15 +10,16 @@ public class Destroyer : MonoBehaviour
     public GameObject timesUp, restartButton;
     public GameObject timeCounter;
     public static bool isEnd = false;
+    public GameObject scoreRightPanel;
+    public GameObject winFinalPanel;
+    public GameObject loseFinalPanel;
+    [SerializeField] AudioSource LevelTheme;
 
     void Update()
     {
         if (timeLeftCounter.timeLeft <= 0)
         {
-            if (ScoreScript.scoreVal > 7)
-                PlayerWin();
-            else
-                PlayerDie();
+            PlayerWin();
         }
     }
     void OnTriggerEnter2D(Collider2D other)
@@ -31,18 +33,24 @@ public class Destroyer : MonoBehaviour
     public void PlayerWin()
     {
         isEnd = true;
-        Destroy(player);
+        //Destroy(player);
         soundManager.PlaySound("win_sound");
+        scoreRightPanel.SetActive(false);
+        winFinalPanel.SetActive(true);
         //tp player to final platflorm for final conversation with Рыжкова
     }
     public void PlayerDie()
     {
         isEnd = true;
+        PlatPlayer.isAlive = false;
+        LevelTheme.Stop();
         soundManager.PlaySound("falling down");
         Time.timeScale = 0;
         Destroy(player);
-        timesUp.gameObject.SetActive(true);
-        restartButton.gameObject.SetActive(true);
+        scoreRightPanel.SetActive(false);
+        loseFinalPanel.SetActive(true);
+        //timesUp.gameObject.SetActive(true);
+        //restartButton.gameObject.SetActive(true);
         timeCounter.gameObject.SetActive(false);
         Destroy(this.gameObject);
     }

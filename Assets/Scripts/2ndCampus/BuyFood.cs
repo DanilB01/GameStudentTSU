@@ -12,6 +12,7 @@ public class BuyFood : MonoBehaviour
     PauseMenu pause;
 
     bool ifTrig = false;
+    bool isOpened = false;
 
     private void Start()
     {
@@ -23,15 +24,27 @@ public class BuyFood : MonoBehaviour
         {
             if (ifTrig)
             {
-                Time.timeScale = 0;
-                PriceList.SetActive(true);
-                pause.enabled = false;
+                if (!isOpened)
+                {
+                    Time.timeScale = 0;
+                    isOpened = true;
+                    PriceList.SetActive(true);
+                    pause.enabled = false;
+                }
+                else
+                {
+                    isOpened = false;
+                    PriceList.SetActive(false);
+                    pause.enabled = true;
+                    Time.timeScale = 1;
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (ifTrig)
+            if (isOpened)
             {
+                isOpened = false;
                 PriceList.SetActive(false);
                 pause.enabled = true;
                 Time.timeScale = 1;

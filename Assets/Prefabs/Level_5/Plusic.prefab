@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1546680129572978880}
   - component: {fileID: 1546680129572978886}
   - component: {fileID: 1546680129572978881}
-  - component: {fileID: 1546680129572978882}
+  - component: {fileID: 7852169999502094100}
   m_Layer: 0
   m_Name: Plusic
   m_TagString: Plus
@@ -109,7 +109,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.11271921, y: 0.11509575}
   m_EdgeRadius: 0
---- !u!114 &1546680129572978882
+--- !u!114 &7852169999502094100
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,6 +118,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1546680129572978884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec08686d6fe20245b0e556dbaa28e2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 40af4eabb48b7ac42a649b2efa45dea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plusSound: {fileID: 8300000, guid: 64eca02b35c873f499bfa0a861f9ac14, type: 3}
+  plusDestroyerSound: {fileID: 8300000, guid: ba1518c3f20536443b0eb53d4282e78c, type: 3}

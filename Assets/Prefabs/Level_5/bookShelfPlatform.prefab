@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac051ef48e5a5e44980070a9130463f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 5.5
+  jumpForce: 10
 --- !u!251 &5903693821836526236
 PlatformEffector2D:
   m_ObjectHideFlags: 0

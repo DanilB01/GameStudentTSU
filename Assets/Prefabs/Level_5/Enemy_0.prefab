@@ -122,14 +122,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6e04e5dce72b64bae6b239eb9fae0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 2770647976888228107, guid: f70d8df22bcef8a43abd94198a8c5aca, type: 3}
   Speed: 0
-  minRangeDistance: 6
-  timeBtwShots: 3
-  startTimeBtwShots: 4
+  minRangeDistance: 7
+  timeBtwShots: 2
+  startTimeBtwShots: 2.5
   projectile: {fileID: 741112288952738904, guid: 996e6ce6017c1f24289b6ba8911e29d1,
     type: 3}
-  plus: {fileID: 1546680129572978884, guid: a1edc84cc6718f440a571c3582f6a89f, type: 3}
+  plusAfterEnemy: {fileID: 7862680120889844536, guid: 81bc7328ccd385342aa6b46a157b5eba,
+    type: 3}
 --- !u!1001 &4781105032377634574
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 85f02f29728fc8b43a08e8721eedba2f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 300
+  forceTextureCase: -1
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: DS Pixel Cyr
+  fontNames:
+  - DS Pixel Cyr
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f529eadb683cede488906695ed779905, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

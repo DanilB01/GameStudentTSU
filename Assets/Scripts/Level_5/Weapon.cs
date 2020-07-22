@@ -13,24 +13,18 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetMouseButtonDown(0) && shootCount <3)
         {
-            if (wait)
-                StartCoroutine(WaitCoroutine());
-            if (shootCount != 3)
-            {
-                shootCount++;
-                soundManager.PlaySound("fire_sound");
-                Shoot();
-                wait = false;
-            }
-            else
-            {
-                wait = true;
-                soundManager.PlaySound("reload_sound");
-                shootCount = 0;
-            }
-            }
+            shootCount++;
+            soundManager.PlaySound("fire_sound");
+            Shoot();
+        }
+        if (Input.GetMouseButtonDown(1) && shootCount==3)
+        {
+            soundManager.PlaySound("reload_sound");
+            StartCoroutine(WaitCoroutine());
+            shootCount = 0;
+        }
     }
     IEnumerator WaitCoroutine()
     {

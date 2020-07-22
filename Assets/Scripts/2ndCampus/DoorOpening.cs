@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DoorOpening : MonoBehaviour
 {
+    public AudioSource doorSound;
+
     Animator anim;
     private void Start()
     {
@@ -11,18 +13,20 @@ public class DoorOpening : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Trigger had happened");
+        
         if (collision.CompareTag("Player"))
         {
             anim.SetBool("ifShouldOpen", true);
+            doorSound.Play();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Trigger was exited");
+        
         if (collision.CompareTag("Player"))
         {
             anim.SetBool("ifShouldOpen", false);
+            doorSound.Play();
         }
     }
 }

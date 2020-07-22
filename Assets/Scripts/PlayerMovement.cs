@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     private Vector2 direction;
     private Animator animator;
-
+    
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -17,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
     {
         TakeInput();
         MoveCharacter();
+        foreach(int a in Marks.examMarks)
+            Debug.Log("exam marks:" + a);
+        foreach (int a in Marks.passMarks)
+            Debug.Log("pass marks:" + a);
+
     }
 
     private void TakeInput()
@@ -26,29 +31,35 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             direction += Vector2.up;
+            
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             direction += Vector2.left;
+            
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             direction += Vector2.down;
+            
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             direction += Vector2.right;
+            
         }
     }
 
     private void MoveCharacter()
     {
         transform.Translate(direction * speed * Time.deltaTime);
+
         if(direction.x != 0 || direction.y != 0)
         {
+
             SetAnimatorMovement(direction);
         }
 
@@ -70,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.tag.Equals("Coins"))
         {
-            CoinsCollect.coinsCount += 1;
+            DataHolder.coinsCount += 1;
         }
     }
 }

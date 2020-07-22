@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class ChangeFloors : MonoBehaviour
 {
-    int floorNum = 0;
+    public int floorNum = 1;
     bool ifTrig = false;
-    public GameObject floor0;
-    public GameObject floor1;
+    [SerializeField] GameObject floor0;
+    [SerializeField] GameObject floor1;
     public GameObject PressEPanel;
 
+    void Start()
+    {
+        if (Translator.fromLevel == 7)
+        {
+            floorNum = Translator.floorNum; // if we returned after level 8
+        }
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))

@@ -6,7 +6,7 @@ public class timeLeftCounter : MonoBehaviour
 {
 
     Text text;
-    public static float timeLeft = 180f;
+    public static float timeLeft = 150f;
     void Start()
     {
         text = GetComponent<Text>();

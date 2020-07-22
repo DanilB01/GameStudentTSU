@@ -5,17 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class Teleportation : MonoBehaviour
 {
-    public int location;
     public GameObject PressEPanel;
     bool ifTrig = false;
-
+    string toLocation = "SecondCampus";
+    [SerializeField] bool isCutScene = false;
     private void LateUpdate()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            if (isCutScene && SceneManager.GetActiveScene().name == "PC_Screen")
+            {
+                SceneManager.LoadScene("MainMenu");
+                Translator.fromLevel = 8;
+            }
+        
             if (ifTrig)
             {
-                SceneManager.LoadScene(location);
+                Translator.fromLevel = 9;
+                if (SceneManager.GetActiveScene().name == "SecondCampus")
+                    toLocation = "TSUmap";
+                if (SceneManager.GetActiveScene().name == "Opening Cutscene")
+                    toLocation = "PC_Screen";
+
+                SceneManager.LoadScene(toLocation);
             }
         }
     }

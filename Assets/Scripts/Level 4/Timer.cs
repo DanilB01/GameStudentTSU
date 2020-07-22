@@ -38,7 +38,17 @@ public class Timer : MonoBehaviour
             finalScreen.SetActive(true);
 
             finalScore = wcCode.counter;
-            finalScoreTxt.text = finalScore.ToString() + "/12";
+            finalScoreTxt.text = finalScore.ToString();
+
+            if (finalScore <= 10 && finalScore >= 9)
+                finalMark = 5;
+            else if (finalScore <= 8 && finalScore >= 7)
+                finalMark = 4;
+            else if (finalScore <= 6 && finalScore >= 4)
+                finalMark = 3;
+            else
+                finalMark = 2;
+            finalMarkTxt.text = finalMark.ToString();
 
 
         }
